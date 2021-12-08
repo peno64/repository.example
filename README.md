@@ -2,7 +2,7 @@ Tutorial and example repository for setting up a GitHub-hosted Kodi repo. \
 This repo is cloned from https://github.com/drinfernoo/repository.example and some modifications were made to make it work. \
 For an example of a repo created using this method, see https://www.github.com/peno64/repository.peno64/
 
-In following text, the root folder is the folder where the python script _repo_generator.py is located. \
+In following text, the root folder is the folder where the python script _repo_generator.py is located.
 
 # BASIC - How to setup for hosting on GitHub Pages
 
@@ -125,21 +125,21 @@ There are two cases:
 
 ### An adddon is updated
 
-The addon sources are in folder repo. Make the needed changes to the addon and don't forget to increment the version number in addon.xml
+The addon sources are in folder repo (or leia, matrix). Make the needed changes to the addon and don't forget to increment the version number in addon.xml
 
 ### An adddon is added
 
-The addon sources are in folder repo. Put here the addon there in its folder. \
+The addon sources are in folder repo (or leia, matrix). Put here the addon there in its folder. \
 Since a new addon is added to the repo, the repo must also update. \
-To force that, goto folder -/repository.peno64. Edit addon.xml and increase the version number. \
+To force that, goto folder -/ADDON_ID_HERE. Edit addon.xml and increase the version number. \
 Edit in the root file index.html and change the version numbers here also. Note that this must be done two times.
 
 ### After the changes are made to the addon/repo
 
-Remove folders zips in folders - and repo. \
+Remove folders zips in folders -, repo, leia, matrix. \
 Run python script _repo_generator.py \
-Remove file repository.peno64-x.y.zip in the root folder. \
-Copy zip file -/zips/repository.peno64/repository.peno64-x.y.zip to the root folder.
+Remove file ADDON_ID_HERE-VERSION_NUMBER_HERE.zip in the root folder. \
+Copy zip file -/zips/ADDON_ID_HERE/ADDON_ID_HERE-VERSION_NUMBER_HERE.zip to the root folder.
 
 ### Upload the changes to github
 git add . \
