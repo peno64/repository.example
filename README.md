@@ -1,5 +1,6 @@
 Tutorial and example repository for setting up a GitHub-hosted Kodi repo. \
-This repo is cloned from https://github.com/drinfernoo/repository.example and some modifications were made to make it work. \
+This repo is cloned from https://github.com/drinfernoo/repository.example \
+The only difference this README file with some extra documentation.
 For an example of a repo created using this method, see https://www.github.com/peno64/repository.peno64/
 
 In following text, the root folder is the folder where the python script _repo_generator.py is located.
@@ -10,7 +11,7 @@ In order to follow this tutorial, first [use this repository as a template](http
 
 ### Creating your repository add-on
 ---
-First, you'll need to edit the `addon.xml` file within the `-/repository.example` folder with your chosen add-on ID, a version number, and your username (or whatever you'd like) for `provider`, as seen on line 2:
+First, you'll need to edit the `addon.xml` file within the `repo/repository.example` folder with your chosen add-on ID, a version number, and your username (or whatever you'd like) for `provider`, as seen on line 2:
 
 ```XML
 <addon id="ADDON_ID_HERE" name="REPO_NAME_HERE" version="VERSION_NUMBER_HERE" provider-name="YOUR_USERNAME_HERE">
@@ -33,9 +34,9 @@ You should also change the summary and description of your repository, as seen o
 <description>DESCRIPTION OF YOUR REPO HERE</description>
 ```
 
-While not required, it is also recommended to replace `icon.png` and `fanart.jpg` in the `-/repository.example` folder with art relevant to your repository or the add-ons contained within. `icon.png` should be 512x512 px, and `fanart.jpg` should be 1920x1080 px, or a similar ratio.
+While not required, it is also recommended to replace `icon.png` and `fanart.jpg` in the `repo/repository.example` folder with art relevant to your repository or the add-ons contained within. `icon.png` should be 512x512 px, and `fanart.jpg` should be 1920x1080 px, or a similar ratio.
 
-Finally, rename the `-/repository.example` folder to match whatever add-on ID you chose earlier.
+Finally, rename the `repo/repository.example` folder to match whatever add-on ID you chose earlier.
 
 ### Adding add-ons to your repository
 ---
@@ -72,7 +73,7 @@ So simply run `_repo_generator.py`. This will create the  `.zip`s of all of the 
 
 ### Make your repository zip installable inside Kodi
 ---
-Copy the zip file of your repository, located at `-/zips/ADDON_ID_HERE/ADDON_ID_HERE-VERSION_NUMBER_HERE.zip`,
+Copy the zip file of your repository, located at `repo/zips/ADDON_ID_HERE/ADDON_ID_HERE-VERSION_NUMBER_HERE.zip`,
 and paste it into the root folder.
 
 Edit the link inside `index.html` to reflect your add-on's filename, as seen on line 1:
@@ -119,30 +120,30 @@ After doing so, your file manager source will be:
 
 # Afterwards, updating addons in this repository
 
+The root folder is the folder where the python script _repo_generator.py is located and subfolder repo exists. \
 There are two cases:
-- An adddon is updated
+- An addon is updated
 - An addon is added
 
-### An adddon is updated
+### An addon is updated
 
 The addon sources are in folder repo (or leia, matrix). Make the needed changes to the addon and don't forget to increment the version number in addon.xml
 
-### An adddon is added
+### An addon is added
 
-The addon sources are in folder repo (or leia, matrix). Put here the addon there in its folder. \
+The addon sources are in folder repo (or leia, matrix). Put the new addon there. \
 Since a new addon is added to the repo, the repo must also update. \
-To force that, goto folder -/ADDON_ID_HERE. Edit addon.xml and increase the version number. \
+To force that, goto folder repo/ADDON_ID_HERE. Edit addon.xml and increase the version number. \
 Edit in the root file index.html and change the version numbers here also. Note that this must be done two times.
 
 ### After the changes are made to the addon/repo
 
-Remove folders zips in folders -, repo, leia, matrix. \
+Remove folder zips in folders repo, leia, matrix. \
 Run python script _repo_generator.py \
 Remove file ADDON_ID_HERE-VERSION_NUMBER_HERE.zip in the root folder. \
-Copy zip file -/zips/ADDON_ID_HERE/ADDON_ID_HERE-VERSION_NUMBER_HERE.zip to the root folder.
+Copy zip file repo/zips/ADDON_ID_HERE/ADDON_ID_HERE-VERSION_NUMBER_HERE.zip to the root folder.
 
 ### Upload the changes to github
 git add . \
 git commit -m "comment" \
 git push -u origin master
-
